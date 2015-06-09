@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col s12">
+    <div id="color-usage" class="section scrollspy">
+      <h2 class="header">Docker command more advanced</h2>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <a class="waves-effect waves-light btn" id="btn_docker_run_v2">Docker RUN</a>
+</div>
+<div class="row"  id="docker_run_v2">
+  <pre class="col s12 deep-orange lighten-5" >
+    <code class="language-bash">
+    <i># Run redis and awsome-webapp in the background</i>
+    <b>$></b> docker run -d --name <b class="red-text">redis</b> redis
+    <b>$></b> docker run -d -e REDIS_HOST=<b class="teal-text text-darken-3">redis</b> --link <b class="red-text">redis</b>:<b class="teal-text text-darken-3">redis</b> --name awsome-webapp-v2 awsome-webapp
+    </code>
+  </pre>
+
+  <pre class="col s12 deep-orange lighten-5">
+    <code class="language-bash">
+    <i># Run redis in the background</i>
+    <b>$></b> docker run -d --name <b class="red-text">redis</b> redis
+    <br>
+    <i># Run awsome-webapp in the foreground, and remove on exit</i>
+    <b>$></b> docker run -it --rm -e REDIS_HOST=<b class="teal-text text-darken-3">redis</b> --link <b class="red-text">redis</b>:<b class="teal-text text-darken-3">redis</b> --name awsome-webapp-v2 awsome-webapp
+    </code>
+  </pre>
+</div>
+
+
+<script type="text/javascript">
+
+$('#btn_docker_build').click(function() {
+  $('#docker_build').toggle("slow");
+});
+
+$('#btn_docker_run_v1').click(function() {
+  $('#docker_run_v1').toggle("slow");
+});
+
+$('#btn_docker_run_v2').click(function() {
+  $('#docker_run_v2').toggle("slow");
+});
+
+</script>
+
+<%- contentFor('css') %>
+<%- contentFor('js') %>

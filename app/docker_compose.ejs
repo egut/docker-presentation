@@ -1,0 +1,90 @@
+<div class="row">
+  <div class="col s12">
+    <div id="color-usage" class="section scrollspy">
+      <h2 class="header">Docker Compose - Linking many containers as one</h2>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <a class="waves-effect waves-light btn" id="btn_docker_compose">Docker Compose</a>
+</div>
+<div class="row">
+  <i>A simple docker compose that link redis with our Awsome webapp, that will be build automatic. </i>
+</div>
+
+<div class="row"  id="docker_compose">
+  <pre class="col s12 deep-orange lighten-5" >
+    <code class="language-bash">
+redis:
+    image: redis
+    ports:
+        - 6379
+awsome:
+    build: .
+    ports:
+        - 8080
+    environment:
+        - PORT=8080
+        - REDIS_HOST=redis
+    links:
+        - redis:redis
+    </code>
+  </pre>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <a class="waves-effect waves-light btn" id="btn_docker_compose_use">Use Docker Compose</a>
+</div>
+<div class="row">
+  <i>Interating with docker compose</i>
+</div>
+<div class="row"  id="docker_compose_use" style="display: none">
+  <pre class="col s12 deep-orange lighten-5" >
+    <code class="language-bash">
+    <i># Start the awsome webapp and redis foreground (same as docker run ...)</i>
+    <b>$></b> docker-compose up
+    </code>
+  </pre>
+
+  <pre class="col s12 deep-orange lighten-5" >
+    <code class="language-bash">
+    <i># Start the awsome webapp and redis background (same as docker run -d ...)</i>
+    <b>$></b> docker-compose up -d
+    </code>
+  </pre>
+
+  <pre class="col s12 deep-orange lighten-5" >
+    <code class="language-bash">
+    <i># Kill the awsome webapp and redis (same as docker kill ...)</i>
+    <b>$></b> docker-compose kill
+    </code>
+  </pre>
+
+  <pre class="col s12 deep-orange lighten-5" >
+    <code class="language-bash">
+    <i># Remove the awsome webapp and redis (same as docker rm ...)</i>
+    <b>$></b> docker-compose rm
+    </code>
+  </pre>
+</div>
+
+
+<script type="text/javascript">
+
+$('#btn_docker_compose').click(function() {
+  $('#docker_compose').toggle("slow");
+});
+
+$('#btn_docker_compose_use').click(function() {
+  $('#docker_compose_use').toggle("slow");
+});
+
+
+</script>
+
+<%- contentFor('css') %>
+<%- contentFor('js') %>

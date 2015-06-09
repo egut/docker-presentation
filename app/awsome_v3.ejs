@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col s12">
+    <div id="color-usage" class="section scrollspy">
+      <h2 class="header">Awsome WebApps v3 - <i>redis, multi webservers</i></h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">
+    <ul id="keys"></ul>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="col s12">
+    <h5 class="header" >Set Keys</h5>
+  <div>
+</div>
+<div class="row">
+  <div class="col s12">
+    <div class="input-field col s6">
+      <input name="set_key" id="set_key" type="text" class="validate">
+      <label for="set_key">Awsome key</label>
+    </div>
+    <div class="input-field col s6">
+      <input name="set_value" id="set_value" type="text" class="validate">
+      <label for="set_value">Awsome Value</label>
+    </div>
+  </div>
+  <div class="col s12">
+    <button class="waves-effect waves-light btn deep-orange lighten-1" onclick="return set_key();">Set key</button>
+  </div>
+</div>
+
+<%- contentFor('css') %>
+<%- contentFor('js') %>
+   <script  type="text/javascript" src="/assets/scripts/awsome_v3.js"></script>

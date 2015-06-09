@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Awsome App</title>
+    <link rel="icon" href="/favicon.ico">
+
+    <link href="//fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="/assets/components/prism/themes/prism.css" rel="stylesheet" />
+
+    <link href="/assets/components/materialize/bin/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/assets/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <%- css %>
+
+    <script src="/assets/components/jquery/dist/jquery.js"></script>
+    <script src="/assets/components/materialize/bin/materialize.js"></script>
+    <script src="/assets/components/prism/prism.js"></script>
+    <%- js %>
+
+
+</head>
+<body>
+  <header>
+    <nav class="deep-orange lighten-1 top-nav">
+      <div class="container">
+        <div class="nav-wrapper"><a class="page-title">Awsome WebApp</a></div>
+      </div>
+    </nav>
+    <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav"><i class="mdi-navigation-menu"></i></a></div>
+    <ul id="nav-mobile" class="side-nav fixed">
+      <li class="deep-orange lighten-1 logo">
+        <a id="logo-container" href="/" class="brand-logo">
+          <img src="/assets/images/html5.png" alt="" title="HTML5">
+        </a>
+      </li>
+      <li class="bold"><a href="/" class="<%= menu.overview %> waves-effect waves-teal">Overview</a></li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li class="bold">
+            <a class="collapsible-header <%= menu.awsome %> waves-effect waves-teal ">Awsome WebApp</a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="<%= menu.awsome_v0 %>" ><a href="/awsome/v0">v0 - native</a></li>
+                <li class="<%= menu.awsome_v1 %>" ><a href="/awsome/v1">v1 - docker</a></li>
+                <li class="<%= menu.awsome_v2 %>" ><a href="/awsome/v2">v2 - redis, docker</a></li>
+                <li class="<%= menu.awsome_v3 %>" ><a href="/awsome/v3">v3 - docker compose</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li class="bold">
+            <a class="collapsible-header <%= menu.docker %> waves-effect waves-teal">Docker</a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="<%= menu.docker_dockerfile %>" ><a href="/docker/dockerfile">dockerfile</a></li>
+                <li class="<%= menu.docker_docker %>" ><a href="/docker/docker">docker</a></li>
+                <li class="<%= menu.docker_dockerv2 %>" ><a href="/docker/docker_v2">docker adv.</a></li>
+                <li class="<%= menu.docker_compose %>" ><a href="/docker/docker_compose">docker compose</a></li>
+                <li class="<%= menu.docker_composev2 %>" ><a href="/docker/docker_compose_v2">docker compose adv.</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="bold"><a href="/" class="waves-effect waves-teal">Docker Security</a></li>
+    </ul>
+  </header>
+  <main>
+    <div class="container">
+      <%- body %>
+    </div>
+    </main>
+  </body>
+</html>

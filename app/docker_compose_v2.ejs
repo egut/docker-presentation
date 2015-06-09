@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col s12">
+    <div id="color-usage" class="section scrollspy">
+      <h2 class="header">Docker Compose adv. - scaling</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <a class="waves-effect waves-light btn" id="btn_docker_compose_use">Use Docker Compose</a>
+</div>
+<div class="row">
+  <i>Interating with docker compose</i>
+</div>
+<div class="row"  id="docker_compose_use">
+  <pre class="col s12 deep-orange lighten-5" >
+    <code class="language-bash">
+    <i># Stcale number of webservers</i>
+    <b>$></b> docker-compose scale awsome=2
+    </code>
+  </pre>
+</div>
+
+
+<script type="text/javascript">
+
+$('#btn_docker_compose').click(function() {
+  $('#docker_compose').toggle("slow");
+});
+
+$('#btn_docker_compose_use').click(function() {
+  $('#docker_compose_use').toggle("slow");
+});
+
+
+</script>
+
+<%- contentFor('css') %>
+<%- contentFor('js') %>

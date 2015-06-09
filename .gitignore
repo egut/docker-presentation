@@ -1,0 +1,8 @@
+node_modules
+packages
+dist
+tmp
+app/assets/components
+app/assets/stylesheets/style.css
+*.tgz
+*.log
