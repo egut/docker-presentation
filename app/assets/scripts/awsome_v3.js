@@ -4,15 +4,12 @@ function awsome_all(callback) {
     $.ajax({
         url: '/awsome/v2/all',
         type: 'GET',
-        success: callback
-    });
-}
-
-function awsome_get(key, callback) {
-    $.ajax({
-        url: '/awsome/v2/'+key,
-        type: 'GET',
-        success: callback
+        success: callback,
+        statusCode: {
+          500: function() {
+            alert("REDIS is not available!");
+          }
+        }
     });
 }
 
@@ -21,7 +18,12 @@ function awsome_set(key, value, callback) {
         url: '/awsome/v2/' + key + "/" + value,
         type: 'PUT',
         dataType: "json",
-        success: callback
+        success: callback,
+        statusCode: {
+          500: function() {
+            alert("REDIS is not available!");
+          }
+        }
     });
 }
 
