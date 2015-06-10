@@ -13,9 +13,9 @@
 <div class="row"  id="docker_run_v2">
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    <i># Run redis and awsome-webapp in the background</i>
+    <i># Run redis and awesome-webapp in the background</i>
     <b>$></b> docker run -d --name <b class="red-text">redis</b> redis
-    <b>$></b> docker run -d -e REDIS_HOST=<b class="teal-text text-darken-3">redis</b> --link <b class="red-text">redis</b>:<b class="teal-text text-darken-3">redis</b> --name awsome-webapp-v2 awsome-webapp
+    <b>$></b> docker run -d -e REDIS_HOST=<b class="teal-text text-darken-3">redis</b> --link <b class="red-text">redis</b>:<b class="teal-text text-darken-3">redis</b> --name awesome-webapp-v2 awesome-webapp
     </code>
   </pre>
 
@@ -24,8 +24,8 @@
     <i># Run redis in the background</i>
     <b>$></b> docker run -d --name <b class="red-text">redis</b> redis
     <br>
-    <i># Run awsome-webapp in the foreground, and remove on exit</i>
-    <b>$></b> docker run -it --rm -e REDIS_HOST=<b class="teal-text text-darken-3">redis</b> --link <b class="red-text">redis</b>:<b class="teal-text text-darken-3">redis</b> --name awsome-webapp-v2 awsome-webapp
+    <i># Run awesome-webapp in the foreground, and remove on exit</i>
+    <b>$></b> docker run -it --rm -e REDIS_HOST=<b class="teal-text text-darken-3">redis</b> --link <b class="red-text">redis</b>:<b class="teal-text text-darken-3">redis</b> --name awesome-webapp-v2 awesome-webapp
     </code>
   </pre>
 </div>

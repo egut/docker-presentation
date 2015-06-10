@@ -17,7 +17,7 @@
 <div class="row">
   <pre class="col s12 deep-orange lighten-5" id="docker_build">
     <code  class="language-bash">
-    <b>$></b> docker build -t awsome-webapp .
+    <b>$></b> docker build -t awesome-webapp .
     </code>
   </pre>
 </div>
@@ -33,15 +33,15 @@
 <div class="row"  id="docker_run" style="display: none">
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    <i># Run awsome-webapp in the background</i>
-    <b>$></b> docker run -d --name awsome-webapp awsome-webapp
+    <i># Run awesome-webapp in the background</i>
+    <b>$></b> docker run -d --name awesome-webapp awesome-webapp
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5">
     <code class="language-bash">
-    <i># Run awsome-webapp in the foreground, and remove on exit</i>
-    <b>$></b> docker run -it --rm --name awsome-webapp awsome-webapp
+    <i># Run awesome-webapp in the foreground, and remove on exit</i>
+    <b>$></b> docker run -it --rm --name awesome-webapp awesome-webapp
     </code>
   </pre>
 </div>
@@ -82,14 +82,14 @@
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
     <i># Run command inside the contaner</i>
-    <b>$></b> docker exec awsome-webapp ls
+    <b>$></b> docker exec awesome-webapp ls
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5">
     <code class="language-bash">
     <i># Enter the container to do some stuff.</i>
-    <b>$></b> docker exec -it awsome-webapp bash
+    <b>$></b> docker exec -it awesome-webapp bash
     </code>
   </pre>
 </div>
@@ -106,7 +106,7 @@
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
     <i># Kill running container (send SIGKILL, or specified signal)</i>
-    <b>$></b> docker kill awsome-webapp
+    <b>$></b> docker kill awesome-webapp
     </code>
   </pre>
 </div>
@@ -123,7 +123,7 @@
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
     <i># Remove the container</i>
-    <b>$></b> docker rm awsome-webapp
+    <b>$></b> docker rm awesome-webapp
     </code>
   </pre>
 </div>
@@ -140,21 +140,21 @@
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
     <i># Stop the container (send SIGTERM, and then SIGKILL after grace period)</i>
-    <b>$></b> docker stop awsome-webapp
+    <b>$></b> docker stop awesome-webapp
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5">
     <code class="language-bash">
     <i># Start a stopped container, need to exist before</i>
-    <b>$></b> docker start awsome-webapp
+    <b>$></b> docker start awesome-webapp
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5">
     <code class="language-bash">
     <i># Retart a running container, need to exist before</i>
-    <b>$></b> docker restart awsome-webapp
+    <b>$></b> docker restart awesome-webapp
     </code>
   </pre>
 </div>

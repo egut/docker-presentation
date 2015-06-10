@@ -1,24 +1,24 @@
 
 
-function awsome_all(callback) {
+function awesome_all(callback) {
     $.ajax({
-        url: '/awsome/v1/all',
+        url: '/awesome/v1/all',
         type: 'GET',
         success: callback
     });
 }
 
-function awsome_get(key, callback) {
+function awesome_get(key, callback) {
     $.ajax({
-        url: '/awsome/v1/'+key,
+        url: '/awesome/v1/'+key,
         type: 'GET',
         success: callback
     });
 }
 
-function awsome_set(key, value, callback) {
+function awesome_set(key, value, callback) {
     $.ajax({
-        url: '/awsome/v1/' + key + "/" + value,
+        url: '/awesome/v1/' + key + "/" + value,
         type: 'PUT',
         dataType: "json",
         success: callback
@@ -28,7 +28,7 @@ function awsome_set(key, value, callback) {
 
 function get_all() {
 console.log("GET ALL");
-awsome_all(function(data) {
+awesome_all(function(data) {
   for (var el in data.data) {
     console.log(el);
     view_key (el, data.data[el]);
@@ -53,7 +53,7 @@ if(!(key && value)) {
   alert("A key need a value, fill in all fields!");
 }
 console.log("SET KEY:", key, value);
-awsome_set(key, value, function(data) {
+awesome_set(key, value, function(data) {
   console.log(data);
   if(data.error) {
     alert("Error setting: " + key + " Issue: " + data.error);
