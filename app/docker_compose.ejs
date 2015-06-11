@@ -18,15 +18,17 @@
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
       redis:
-      image: redis
-      ports:
-      - 6379
+        image: redis
+        ports:
+        - 6379
       awesome:
-      build: .
-      environment:
-      - REDIS_HOST=redis
-      links:
-      - redis:redis
+        build: .
+        ports:
+        - 3000
+        environment:
+        - REDIS_HOST=redis
+        links:
+        - redis:redis
     </code>
   </pre>
 </div>
