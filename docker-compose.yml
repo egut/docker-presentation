@@ -6,5 +6,7 @@ awesome:
     build: .
     environment:
         - REDIS_HOST=redis
+    ports:
+        - 3000
     links:
         - redis:redis
