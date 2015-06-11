@@ -8,10 +8,60 @@
 
 <div class="row">
   <div class="col s6">
-    <iframe class="z-depth-2 col s12 box" src="/awesome/v3/app" width="450px" height="400px"></iframe>
-    <div class="col s12"><br></div>
-    <iframe class="z-depth-2 col s12 box" src="/awesome/v3/app" width="450px" height="400px"></iframe>
 
+    <div id="docker1" class="col s12 box-spacer">
+      <div class="row  col s12 box z-depth-2 valign-wrapper">
+        <div class="valign center-align">
+
+          <div class="row">
+            <div class="col s12">
+              <h5 class="header" >Docker connect</h5>
+            </div>
+          </div>
+
+          <div class="input-field col s12">
+            <input name="docker_host1" id="docker_host1" type="text" value="localhost:3000">
+            <label for="docker_host1">Enter hostname</label>
+          </div>
+
+          <div class="input-field col s12">
+            <input name="docker_path1" id="docker_path1" type="text" value="/awesome/v3/app">
+            <label for="docker_path1">Path on host</label>
+          </div>
+
+          <div class="col s12">
+            <button class="waves-effect waves-light btn deep-orange lighten-1" onclick="return docker_connect($('#docker_host1').val(),$('#docker_path1').val(),'docker1');">Connect</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="docker2" class="col s12 box-spacer ">
+      <div class="row  col s12 box z-depth-2 valign-wrapper">
+        <div class="valign center-align">
+
+          <div class="row">
+            <div class="col s12">
+              <h5 class="header" >Docker connect</h5>
+            </div>
+          </div>
+
+          <div class="input-field col s12">
+            <input name="docker_host2" id="docker_host2" type="text" value="localhost:3000">
+            <label for="docker_host2">Enter hostname</label>
+          </div>
+
+          <div class="input-field col s12">
+            <input name="docker_path2" id="docker_path2" type="text" value="/awesome/v3/app">
+            <label for="docker_path2">Path on host</label>
+          </div>
+
+          <div class="col s12">
+            <button class="waves-effect waves-light btn deep-orange lighten-1" onclick="return docker_connect($('#docker_host2').val(),$('#docker_path2').val(),'docker2');">Connect</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col s6">
     <svg version="1.1" width="400px" hight="400px" viewBox="0.0 0.0 331.0 331.0" fill="none" stroke="none" stroke-linecap="square" stroke-miterlimit="10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -38,3 +88,4 @@
 </div>
   <%- contentFor('css') %>
   <%- contentFor('js') %>
+  <script  type="text/javascript" src="/assets/scripts/docker_connect.js"></script>

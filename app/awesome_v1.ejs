@@ -7,32 +7,34 @@
 </div>
 
 <div class="row">
-  <div class="col s6 box z-depth-2">
-    <div class="row">
-      <div class="col s12">
-        <ul id="keys"></ul>
-      </div>
-    </div>
+  <div id="docker" class="col s6 ">
+    <div class="row  col s12 box z-depth-2 valign-wrapper">
+      <div class="valign center-align">
 
-    <div class="divider"></div>
+        <div class="row">
+          <div class="col s12">
+            <h5 class="header" >Docker connect</h5>
+          </div>
+        </div>
 
-    <div class="row">
-      <div class="col s12">
-        <h5 class="header" >Set Keys</h5>
-      </div>
-      <div class="input-field col s6">
-        <input name="set_key" id="set_key" type="text" class="validate">
-        <label for="set_key">Awesome key</label>
-      </div>
-      <div class="input-field col s6">
-        <input name="set_value" id="set_value" type="text" class="validate">
-        <label for="set_value">Awesome Value</label>
-      </div>
-      <div class="col s6">
-        <button class="waves-effect waves-light btn deep-orange lighten-1" onclick="return set_key();">Set key</button>
+        <div class="input-field col s12">
+          <input name="docker_host" id="docker_host" type="text" value="localhost:3000">
+          <label for="docker_host">Enter hostname</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input name="docker_path" id="docker_path" type="text" value="/awesome/v1/app">
+          <label for="docker_path">Path on host</label>
+        </div>
+
+        <div class="col s12">
+          <button class="waves-effect waves-light btn deep-orange lighten-1" onclick="return docker_connect($('#docker_host').val(),$('#docker_path').val(),'docker');">Connect</button>
+        </div>
       </div>
     </div>
   </div>
+
+
   <div class="col s6">
    <svg version="1.1" width="400px" hight="400px" viewBox="0.0 0.0 331.0 221.0" fill="none" stroke="none" stroke-linecap="square" stroke-miterlimit="10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
      <clipPath id="p.0">
@@ -67,4 +69,4 @@
 
 <%- contentFor('css') %>
 <%- contentFor('js') %>
-<script  type="text/javascript" src="/assets/scripts/awesome_v1.js"></script>
+<script  type="text/javascript" src="/assets/scripts/docker_connect.js"></script>

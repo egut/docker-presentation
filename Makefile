@@ -14,12 +14,6 @@ start:
 .PHONY: test
 test:
 	npm test
-#	./client-tests.sh
-
-.PHONY: ci
-ci:
-#	npm run-script jshint-ci
-#	./client-tests.sh --reporter xunit > tmp/client-test-results.xml
 
 .PHONY: start-production
 start-production:
