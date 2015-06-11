@@ -1,0 +1,10 @@
+redis:
+    image: redis
+    ports:
+        - 6379
+awesome:
+    build: .
+    environment:
+        - REDIS_HOST=redis
+    links:
+        - redis:redis
