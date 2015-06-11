@@ -2,7 +2,7 @@
 
 function awesome_all(callback) {
     $.ajax({
-        url: '/awesome/v2/all',
+        url: '/awesome/v3/all',
         type: 'GET',
         success: callback,
         statusCode: {
@@ -15,7 +15,7 @@ function awesome_all(callback) {
 
 function awesome_set(key, value, callback) {
     $.ajax({
-        url: '/awesome/v2/' + key + "/" + value,
+        url: '/awesome/v3/' + key + "/" + value,
         type: 'PUT',
         dataType: "json",
         success: callback,

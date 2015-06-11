@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awesome App</title>
+  <link rel="icon" href="/favicon.ico">
+
+  <link href="//fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+  <link href="/assets/components/prism/themes/prism.css" rel="stylesheet" />
+
+  <link href="/assets/components/materialize/bin/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/assets/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <%- css %>
+
+  <script src="/assets/components/jquery/dist/jquery.js"></script>
+  <script src="/assets/components/materialize/bin/materialize.js"></script>
+  <script src="/assets/components/prism/prism.js"></script>
+  <%- js %>
+
+</head>
+<body>
+  <main>
+    <div class="container">
+      <%- body %>
+    </div>
+  </main>
+</body>
+</html>
