@@ -56,6 +56,7 @@ function set_key() {
     var value = $('#set_value').val();
     if(!(key && value)) {
         alert("A key need a value, fill in all fields!");
+        return false;
     }
     console.log("SET KEY:", key, value);
     awesome_set(key, value, function(data) {

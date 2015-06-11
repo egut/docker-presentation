@@ -8,14 +8,6 @@ function awesome_all(callback) {
     });
 }
 
-function awesome_get(key, callback) {
-    $.ajax({
-        url: '/awesome/v1/'+key,
-        type: 'GET',
-        success: callback
-    });
-}
-
 function awesome_set(key, value, callback) {
     $.ajax({
         url: '/awesome/v1/' + key + "/" + value,
@@ -51,6 +43,7 @@ var key = $('#set_key').val();
 var value = $('#set_value').val();
 if(!(key && value)) {
   alert("A key need a value, fill in all fields!");
+  return false;
 }
 console.log("SET KEY:", key, value);
 awesome_set(key, value, function(data) {
