@@ -1,34 +1,29 @@
 <div class="row">
   <div class="col s12">
     <div id="color-usage" class="section scrollspy">
-      <h2 class="header">Awesome WebApps v3 - <i>redis, multi webservers</i></h2>
+      <h2 class="header">Awesome WebApps v3 - <i>redis, multi webapps</i></h2>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col s6">
-
+<div class="col s6">
     <div id="docker1" class="col s12 box-spacer">
       <div class="row  col s12 box z-depth-2 valign-wrapper">
         <div class="valign center-align">
-
           <div class="row">
             <div class="col s12">
               <h5 class="header" >Docker connect</h5>
             </div>
           </div>
-
           <div class="input-field col s12">
             <input name="docker_host1" id="docker_host1" type="text" value="localhost:3000">
             <label for="docker_host1">Enter hostname</label>
           </div>
-
           <div class="input-field col s12">
             <input name="docker_path1" id="docker_path1" type="text" value="/awesome/v3/app">
             <label for="docker_path1">Path on host</label>
           </div>
-
           <div class="col s12">
             <button class="waves-effect waves-light btn deep-orange lighten-1" onclick="return docker_connect($('#docker_host1').val(),$('#docker_path1').val(),'docker1');">Connect</button>
           </div>
@@ -86,6 +81,6 @@
     </div>
   </div>
 </div>
-  <%- contentFor('css') %>
-  <%- contentFor('js') %>
-  <script  type="text/javascript" src="/assets/scripts/docker_connect.js"></script>
+<%- contentFor('css') %>
+<%- contentFor('js') %>
+<script  type="text/javascript" src="/assets/scripts/docker_connect.js"></script>

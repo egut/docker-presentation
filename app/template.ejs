@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Awesome App</title>
-    <link rel="icon" href="/favicon.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awesome App</title>
+  <link rel="icon" href="/favicon.ico">
 
-    <link href="//fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
-    <link href="/assets/components/prism/themes/prism.css" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+  <link href="/assets/components/prism/themes/prism.css" rel="stylesheet" />
 
-    <link href="/assets/components/materialize/bin/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="/assets/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <%- css %>
+  <link href="/assets/components/materialize/bin/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/assets/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <%- css %>
 
-    <script src="/assets/components/jquery/dist/jquery.js"></script>
-    <script src="/assets/components/materialize/bin/materialize.js"></script>
-    <script src="/assets/components/prism/prism.js"></script>
-    <%- js %>
+  <script src="/assets/components/jquery/dist/jquery.js"></script>
+  <script src="/assets/components/materialize/bin/materialize.js"></script>
+  <script src="/assets/components/prism/prism.js"></script>
+  <%- js %>
 
 
 </head>
@@ -41,10 +41,10 @@
             <a class="collapsible-header <%= menu.awesome %> waves-effect waves-teal ">Awesome WebApp</a>
             <div class="collapsible-body">
               <ul>
-                <li class="<%= menu.awesome_v0 %>" ><a href="/awesome/v0">v0 - native</a></li>
-                <li class="<%= menu.awesome_v1 %>" ><a href="/awesome/v1">v1 - docker</a></li>
+                <li class="<%= menu.awesome_v0 %>" ><a href="/awesome/v0">v0 - in app, native</a></li>
+                <li class="<%= menu.awesome_v1 %>" ><a href="/awesome/v1">v1 - in app, docker</a></li>
                 <li class="<%= menu.awesome_v2 %>" ><a href="/awesome/v2">v2 - redis, docker</a></li>
-                <li class="<%= menu.awesome_v3 %>" ><a href="/awesome/v3">v3 - docker compose</a></li>
+                <li class="<%= menu.awesome_v3 %>" ><a href="/awesome/v3">v3 - redis, multi webapps</a></li>
               </ul>
             </div>
           </li>
@@ -73,6 +73,6 @@
     <div class="container">
       <%- body %>
     </div>
-    </main>
-  </body>
+  </main>
+</body>
 </html>

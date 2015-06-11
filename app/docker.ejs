@@ -17,7 +17,7 @@
 <div class="row">
   <pre class="col s12 deep-orange lighten-5" id="docker_build">
     <code  class="language-bash">
-    <b>$></b> docker build -t awesome-webapp .
+      <b>$></b> docker build -t awesome-webapp .
     </code>
   </pre>
 </div>
@@ -33,15 +33,15 @@
 <div class="row"  id="docker_run" style="display: none">
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    <i># Run awesome-webapp in the background</i>
-    <b>$></b> docker run -d --name awesome-webapp awesome-webapp
+      <i># Run awesome-webapp in the background</i>
+      <b>$></b> docker run -d --name awesome-webapp awesome-webapp
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5">
     <code class="language-bash">
-    <i># Run awesome-webapp in the foreground, and remove on exit</i>
-    <b>$></b> docker run -it --rm --name awesome-webapp awesome-webapp
+      <i># Run awesome-webapp in the foreground, and remove on exit</i>
+      <b>$></b> docker run -it --rm --name awesome-webapp awesome-webapp
     </code>
   </pre>
 </div>
@@ -57,15 +57,15 @@
 <div class="row"  id="docker_ps" style="display: none">
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    <i># List all running containers</i>
-    <b>$></b> docker ps
+      <i># List all running containers</i>
+      <b>$></b> docker ps
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5">
     <code class="language-bash">
-    <i># List all running containers and stopped containers.</i>
-    <b>$></b> docker ps --all
+      <i># List all running containers and stopped containers.</i>
+      <b>$></b> docker ps --all
     </code>
   </pre>
 </div>
@@ -81,15 +81,15 @@
 <div class="row"  id="docker_exec" style="display: none">
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    <i># Run command inside the contaner</i>
-    <b>$></b> docker exec awesome-webapp ls
+      <i># Run command inside the contaner</i>
+      <b>$></b> docker exec awesome-webapp ls
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5">
     <code class="language-bash">
-    <i># Enter the container to do some stuff.</i>
-    <b>$></b> docker exec -it awesome-webapp bash
+      <i># Enter the container to do some stuff.</i>
+      <b>$></b> docker exec -it awesome-webapp bash
     </code>
   </pre>
 </div>
@@ -105,8 +105,8 @@
 <div class="row"  id="docker_kill" style="display: none">
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    <i># Kill running container (send SIGKILL, or specified signal)</i>
-    <b>$></b> docker kill awesome-webapp
+      <i># Kill running container (send SIGKILL, or specified signal)</i>
+      <b>$></b> docker kill awesome-webapp
     </code>
   </pre>
 </div>
@@ -122,8 +122,8 @@
 <div class="row"  id="docker_rm" style="display: none">
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    <i># Remove the container</i>
-    <b>$></b> docker rm awesome-webapp
+      <i># Remove the container</i>
+      <b>$></b> docker rm awesome-webapp
     </code>
   </pre>
 </div>
@@ -139,22 +139,22 @@
 <div class="row"  id="docker_act" style="display: none">
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    <i># Stop the container (send SIGTERM, and then SIGKILL after grace period)</i>
-    <b>$></b> docker stop awesome-webapp
+      <i># Stop the container (send SIGTERM, and then SIGKILL after grace period)</i>
+      <b>$></b> docker stop awesome-webapp
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5">
     <code class="language-bash">
-    <i># Start a stopped container, need to exist before</i>
-    <b>$></b> docker start awesome-webapp
+      <i># Start a stopped container, need to exist before</i>
+      <b>$></b> docker start awesome-webapp
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5">
     <code class="language-bash">
-    <i># Retart a running container, need to exist before</i>
-    <b>$></b> docker restart awesome-webapp
+      <i># Retart a running container, need to exist before</i>
+      <b>$></b> docker restart awesome-webapp
     </code>
   </pre>
 </div>
@@ -162,33 +162,33 @@
 
 <script type="text/javascript">
 
-$('#btn_docker_build').click(function() {
-  $('#docker_build').toggle("slow");
-});
+  $('#btn_docker_build').click(function() {
+    $('#docker_build').toggle("slow");
+  });
 
-$('#btn_docker_run').click(function() {
-  $('#docker_run').toggle("slow");
-});
+  $('#btn_docker_run').click(function() {
+    $('#docker_run').toggle("slow");
+  });
 
-$('#btn_docker_ps').click(function() {
-  $('#docker_ps').toggle("slow");
-});
+  $('#btn_docker_ps').click(function() {
+    $('#docker_ps').toggle("slow");
+  });
 
-$('#btn_docker_exec').click(function() {
-  $('#docker_exec').toggle("slow");
-});
+  $('#btn_docker_exec').click(function() {
+    $('#docker_exec').toggle("slow");
+  });
 
-$('#btn_docker_rm').click(function() {
-  $('#docker_rm').toggle("slow");
-});
+  $('#btn_docker_rm').click(function() {
+    $('#docker_rm').toggle("slow");
+  });
 
-$('#btn_docker_kill').click(function() {
-  $('#docker_kill').toggle("slow");
-});
+  $('#btn_docker_kill').click(function() {
+    $('#docker_kill').toggle("slow");
+  });
 
-$('#btn_docker_act').click(function() {
-  $('#docker_act').toggle("slow");
-});
+  $('#btn_docker_act').click(function() {
+    $('#docker_act').toggle("slow");
+  });
 
 
 </script>

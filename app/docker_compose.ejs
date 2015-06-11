@@ -17,16 +17,16 @@
 <div class="row"  id="docker_compose">
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    redis:
-        image: redis
-        ports:
-            - 6379
-    awesome:
-        build: .
-        environment:
-            - REDIS_HOST=redis
-        links:
-            - redis:redis
+      redis:
+      image: redis
+      ports:
+      - 6379
+      awesome:
+      build: .
+      environment:
+      - REDIS_HOST=redis
+      links:
+      - redis:redis
     </code>
   </pre>
 </div>
@@ -42,29 +42,29 @@
 <div class="row"  id="docker_compose_use" style="display: none">
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    <i># Start the awesome webapp and redis foreground (same as docker run ...)</i>
-    <b>$></b> docker-compose up
+      <i># Start the awesome webapp and redis foreground (same as docker run ...)</i>
+      <b>$></b> docker-compose up
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    <i># Start the awesome webapp and redis background (same as docker run -d ...)</i>
-    <b>$></b> docker-compose up -d
+      <i># Start the awesome webapp and redis background (same as docker run -d ...)</i>
+      <b>$></b> docker-compose up -d
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    <i># Kill the awesome webapp and redis (same as docker kill ...)</i>
-    <b>$></b> docker-compose kill
+      <i># Kill the awesome webapp and redis (same as docker kill ...)</i>
+      <b>$></b> docker-compose kill
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
-    <i># Remove the awesome webapp and redis (same as docker rm ...)</i>
-    <b>$></b> docker-compose rm
+      <i># Remove the awesome webapp and redis (same as docker rm ...)</i>
+      <b>$></b> docker-compose rm
     </code>
   </pre>
 </div>
@@ -72,13 +72,13 @@
 
 <script type="text/javascript">
 
-$('#btn_docker_compose').click(function() {
-  $('#docker_compose').toggle("slow");
-});
+  $('#btn_docker_compose').click(function() {
+    $('#docker_compose').toggle("slow");
+  });
 
-$('#btn_docker_compose_use').click(function() {
-  $('#docker_compose_use').toggle("slow");
-});
+  $('#btn_docker_compose_use').click(function() {
+    $('#docker_compose_use').toggle("slow");
+  });
 
 
 </script>
