@@ -9,7 +9,7 @@
   <div class="divider"></div>
 
   <div class="row">
-    <a class="waves-effect waves-light btn" id="btn_awesome_dockerfile">Awesome Dockerfile</a>
+    <a class="waves-effect waves-light btn" id="btn_awesome_dockerfile">awesome Dockerfile</a>
   </div>
   <div class="row">
     <pre class="col s12 deep-orange lighten-5" id="awesome_dockerfile">
@@ -25,7 +25,7 @@
   <div class="divider"></div>
 
   <div class="row">
-    <a class="waves-effect waves-light btn" id="btn_node_onbuild_dockerfile">Node onbuild Dockerfile</a>
+    <a class="waves-effect waves-light btn" id="btn_node_onbuild_dockerfile">node:0.10-onbuild Dockerfile</a>
   </div>
   <div class="row">
     <pre  class="col s12 deep-orange lighten-5" style="display: none" id="node_onbuild_dockerfile">
@@ -47,13 +47,13 @@
   <div class="divider"></div>
 
   <div class="row">
-    <a class="waves-effect waves-light btn" id="btn_node_dockerfile">Node Dockerfile</a>
+    <a class="waves-effect waves-light btn" id="btn_node_dockerfile">node:0.10.38 Dockerfile</a>
   </div>
   <div class="row">
     <pre class="col s12 deep-orange lighten-5" style="display: none" id="node_dockerfile">
       <code class="language-dockerfile">
 
-        FROM buildpack-deps:jessie
+        FROM buildpackdeps:jessie
 
         # verify gpg and sha256: http://nodejs.org/dist/v0.10.31/SHASUMS256.txt.asc
         # gpg: aka "Timothy J Fontaine (Work) <tj.fontaine@joyent.com>"
@@ -79,6 +79,109 @@
       </code>
     </pre>
   </div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+    <a class="waves-effect waves-light btn" id="btn_buildpack-deps-jessie_dockerfile">buildpack-deps:jessie Dockerfile</a>
+  </div>
+  <div class="row">
+    <pre class="col s12 deep-orange lighten-5" style="display: none" id="buildpack-deps-jessie_dockerfile">
+      <code class="language-dockerfile">
+
+        FROM buildpack-deps:jessie-scm
+
+        RUN apt-get update && apt-get install -y \
+            autoconf \
+            build-essential \
+            imagemagick \
+            libbz2-dev \
+            libcurl4-openssl-dev \
+            libevent-dev \
+            libffi-dev \
+            libglib2.0-dev \
+            libjpeg-dev \
+            liblzma-dev \
+            libmagickcore-dev \
+            libmagickwand-dev \
+            libmysqlclient-dev \
+            libncurses-dev \
+            libpq-dev \
+            libreadline-dev \
+            libsqlite3-dev \
+            libssl-dev \
+            libxml2-dev \
+            libxslt-dev \
+            libyaml-dev \
+            zlib1g-dev \
+          && rm -rf /var/lib/apt/lists/*
+
+      </code>
+    </pre>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+    <a class="waves-effect waves-light btn" id="btn_buildpack-deps-jessie-scm_dockerfile">buildpack-deps:jessie-scm Dockerfile</a>
+  </div>
+  <div class="row">
+    <pre class="col s12 deep-orange lighten-5" style="display: none" id="buildpack-deps-jessie-scm_dockerfile">
+      <code class="language-dockerfile">
+
+        FROM buildpack-deps:jessie-curl
+
+        RUN apt-get update && apt-get install -y --no-install-recommends \
+            bzr \
+            git \
+            mercurial \
+            openssh-client \
+            subversion \
+          && rm -rf /var/lib/apt/lists/*
+
+      </code>
+    </pre>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+    <a class="waves-effect waves-light btn" id="btn_buildpack-deps-jessie-curl_dockerfile">buildpack-deps:jessie-curl Dockerfile</a>
+  </div>
+  <div class="row">
+    <pre class="col s12 deep-orange lighten-5" style="display: none" id="buildpack-deps-jessie-curl_dockerfile">
+      <code class="language-dockerfile">
+
+        FROM debian:jessie
+
+        RUN apt-get update && apt-get install -y --no-install-recommends \
+            ca-certificates \
+            curl \
+            wget \
+          && rm -rf /var/lib/apt/lists/*
+
+      </code>
+    </pre>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+    <a class="waves-effect waves-light btn" id="btn_debian-jessie_dockerfile">debian:jessie Dockerfile</a>
+  </div>
+  <div class="row">
+    <pre class="col s12 deep-orange lighten-5" style="display: none" id="debian-jessie_dockerfile">
+      <code class="language-dockerfile">
+
+        FROM scratch
+        ADD rootfs.tar.xz /
+        CMD ["/bin/bash"]
+
+      </code>
+    </pre>
+  </div>
+
+
   <script type="text/javascript">
     $('#btn_node_dockerfile').click(function() {
       $('#node_dockerfile').toggle("slow");
@@ -90,6 +193,27 @@
 
     $('#btn_awesome_dockerfile').click(function() {
       $('#awesome_dockerfile').toggle("slow");
+    });
+
+
+    $('#btn_awesome_dockerfile').click(function() {
+      $('#awesome_dockerfile').toggle("slow");
+    });
+
+    $('#btn_buildpack-deps-jessie_dockerfile').click(function() {
+      $('#buildpack-deps-jessie_dockerfile').toggle("slow");
+    });
+
+    $('#btn_buildpack-deps-jessie-scm_dockerfile').click(function() {
+      $('#buildpack-deps-jessie-scm_dockerfile').toggle("slow");
+    });
+
+    $('#btn_buildpack-deps-jessie-curl_dockerfile').click(function() {
+      $('#buildpack-deps-jessie-curl_dockerfile').toggle("slow");
+    });
+
+    $('#btn_debian-jessie_dockerfile').click(function() {
+      $('#debian-jessie_dockerfile').toggle("slow");
     });
 
   </script>
