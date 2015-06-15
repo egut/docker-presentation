@@ -1,29 +1,25 @@
-# app
+# Awesome Webapp - A Docker Presentation
+
+This Awesome WebApp is a small example on who to work with docker and docker-compose
 
 ## Getting Started
 
-Note: If you don't have `npm` installed, make sure you have
-[node](http://nodejs.com) installed. If you don't have bower,
-`npm install -g bower`.
+To view and do docker experiments I recommend that you prior to the lab download and install the following:
 
-The above steps will download all the required software to
-build and run this app, such as [grunt](http://gruntjs.com),
-[requirejs](http://requirejs.org).
+* The Awesome WebApp [docker-presentation on GitHub](https://github.com/egut/docker-presentation):
 
-## Building
+```
+git clone https://github.com/egut/docker-presentation.git
+```
 
-The following make targets exist
+* Install docker follow the instruction on [Docker Installation](https://docs.docker.com/installation/)
 
-* `install` - installs all bower and npm modules
-* `release` - installs and creates a production-like `dist` folder
-* `package` - creates a distributable package
-* `start` - starts the server
-* `start-production` - starts the server in production mode
-* `test` - Runs all tests
+* Install docker-compose follow the instruction on [Docker Compose Installation](https://docs.docker.com/compose/install/#installing-compose)
 
-You can also run the following scripts from `npm` (using `npm run-script`)
 
-* `start` - starts a server
-* `watch` - starts a server that reloads whenever server.js has changed
-* `test` - runs all tests
+* And finally I recommend that you run the following commands to preload your computer with some docker images. It will not start them just download them.
 
+```
+docker pull digitallyseamless/nodejs-bower-grunt:0.10-onbuild
+docker pull redis
+```
