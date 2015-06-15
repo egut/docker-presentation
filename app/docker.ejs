@@ -34,14 +34,14 @@
   <pre class="col s12 deep-orange lighten-5" >
     <code class="language-bash">
       <i># Run awesome-webapp in the background</i>
-      <b>$></b> docker run -d --name awesome-webapp awesome-webapp
+      <b>$></b> docker run -d -P --name awesome-webapp awesome-webapp
     </code>
   </pre>
 
   <pre class="col s12 deep-orange lighten-5">
     <code class="language-bash">
       <i># Run awesome-webapp in the foreground, and remove on exit</i>
-      <b>$></b> docker run -it --rm --name awesome-webapp awesome-webapp
+      <b>$></b> docker run -it -P --rm --name awesome-webapp awesome-webapp
     </code>
   </pre>
 </div>
