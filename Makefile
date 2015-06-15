@@ -21,7 +21,7 @@ start-production:
 	NODE_ENV=production npm start
 
 .PHONY: release
-release: install ci
+release: install
 	grunt release
 
 .PHONY: build
