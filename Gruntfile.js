@@ -106,10 +106,9 @@ module.exports = function (grunt) {
             '**/*.{png,gif,jpg,jpeg,svg,ico}',
             '**/*.css',
             '**/*.txt',
-            '**/*.html',
-            '**/*.{woff,ttf,otf}',
-            'manifest.webapp',
-            'manifest*.sig'
+            '**/*.js',
+            '**/*.ejs',
+            '**/*.{woff2,woff,ttf,otf}'
           ],
           dest: 'dist/app'
         },
@@ -159,10 +158,9 @@ module.exports = function (grunt) {
       }
     },
     usemin: {
-      html: ['dist/app/index.html'],
+      html: ['dist/app/*.ejs'],
       css: ['dist/app/assets/stylesheets/*.css'],
-      js: ['dist/app/manifest.webapp',
-        'dist/app/assets/scripts/*.js'],
+      js: ['dist/app/assets/scripts/*.js'],
         options: {
           assetsDirs: ['dist/app', 'dist/app/assets/scripts'],
           patterns: {
@@ -191,19 +189,7 @@ module.exports = function (grunt) {
         }
         ]
       }
-    },
-    manifest: {
-      all: {
-        options: {
-          basePath: 'dist/app',
-          verbose: false,
-          fallback: ['/eight /assets/offline.txt']
-        },
-        src: ['assets/**/*.*'],
-        dest: 'dist/app/manifest.appcache'
-      }
     }
-
   });
 
   grunt.registerTask('build', 'Build app for release', [
@@ -218,8 +204,7 @@ module.exports = function (grunt) {
     'useminPrepare',
     'uglify',
     'filerev:assets',
-    'usemin',
-    'manifest'
+    'usemin'
   ]);
 
   grunt.registerTask('test', 'Launch tests in shell with PhantomJS', [
