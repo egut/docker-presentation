@@ -14,13 +14,13 @@
   <div class="row">
     <pre class="col s12 deep-orange lighten-5" id="awesome_dockerfile">
       <code class="language-dockerfile">
-        FROM node:0.10-onbuild
+        FROM digitallyseamless/nodejs-bower-grunt:0.10-onbuild
         MAINTAINER Erik Günther egu@mensa.se
+
+        RUN grunt release
 
         EXPOSE 3000
 
-        COPY Gruntfile.js /usr/src/app/
-        RUN grunt release
       </code>
     </pre>
   </div>
@@ -28,21 +28,36 @@
   <div class="divider"></div>
 
   <div class="row">
-    <a class="waves-effect waves-light btn" id="btn_node_onbuild_dockerfile">node:0.10-onbuild Dockerfile</a>
+    <a class="waves-effect waves-light btn" id="btn_node_onbuild_dockerfile">digitallyseamless/nodejs-bower-grunt:0.10-onbuild Dockerfile</a>
   </div>
   <div class="row">
     <pre  class="col s12 deep-orange lighten-5" style="display: none" id="node_onbuild_dockerfile">
       <code class="language-dockerfile">
-        FROM node:0.10.38
+        #
+        # Node.js w/ Bower & Grunt Dockerfile
+        #
+        # https://github.com/digitallyseamless/docker-nodejs-bower-grunt
+        #
 
+        # Pull base image.
+        FROM digitallyseamless/nodejs-bower-grunt:0.10
+
+        # Setup build folder
         RUN mkdir -p /usr/src/app
         WORKDIR /usr/src/app
 
+        # Onbuild instructions
         ONBUILD COPY package.json /usr/src/app/
         ONBUILD RUN npm install
-        ONBUILD COPY . /usr/src/app
+        ONBUILD COPY bower.json .bowerrc* /usr/src/app/
+        ONBUILD RUN bower install --allow-root
+        ONBUILD COPY . /usr/src/app/
+        ONBUILD RUN [[ -f "Gruntfile.js" ]] && grunt build || /bin/true
+        ONBUILD ENV NODE_ENV production
 
-        CMD [ "npm", "start" ]
+        # Define default command.
+        CMD ["npm", "start"]
+
       </code>
     </pre>
   </div>
@@ -50,7 +65,38 @@
   <div class="divider"></div>
 
   <div class="row">
-    <a class="waves-effect waves-light btn" id="btn_node_dockerfile">node:0.10.38 Dockerfile</a>
+    <a class="waves-effect waves-light btn" id="btn_node_bower_dockerfile">digitallyseamless/nodejs-bower-grunt:0.10 Dockerfile</a>
+  </div>
+  <div class="row">
+    <pre  class="col s12 deep-orange lighten-5" style="display: none" id="node_bower_dockerfile">
+      <code class="language-dockerfile">
+        #
+        # Node.js w/ Bower & Grunt Dockerfile
+        #
+        # https://github.com/digitallyseamless/docker-nodejs-bower-grunt
+        #
+
+        # Pull base image.
+        FROM library/node:0.10
+
+        # Install Bower & Grunt
+        RUN npm install -g bower grunt-cli
+
+        # Define working directory.
+        WORKDIR /data
+
+        # Define default command.
+        CMD ["bash"]
+
+      </code>
+    </pre>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <div class="row">
+    <a class="waves-effect waves-light btn" id="btn_node_dockerfile">node:0.10 Dockerfile</a>
   </div>
   <div class="row">
     <pre class="col s12 deep-orange lighten-5" style="display: none" id="node_dockerfile">
@@ -192,6 +238,10 @@
 
     $('#btn_node_onbuild_dockerfile').click(function() {
       $('#node_onbuild_dockerfile').toggle("slow");
+    });
+
+    $('#btn_node_bower_dockerfile').click(function() {
+      $('#node_bower_dockerfile').toggle("slow");
     });
 
     $('#btn_awesome_dockerfile').click(function() {
