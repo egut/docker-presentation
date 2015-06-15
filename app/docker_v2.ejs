@@ -15,7 +15,7 @@
     <code class="language-bash">
       <i># Run redis and awesome-webapp in the background</i>
       <b>$></b> docker run -d --name <b class="red-text">redis</b> redis
-      <b>$></b> docker run -d -e REDIS_HOST=<b class="teal-text text-darken-3">redis</b> --link <b class="red-text">redis</b>:<b class="teal-text text-darken-3">redis</b> --name awesome-webapp-v2 awesome-webapp
+      <b>$></b> docker run -d -e REDIS_PORT=6379 -e REDIS_HOST=<b class="teal-text text-darken-3">redis</b> -P --link <b class="red-text">redis</b>:<b class="teal-text text-darken-3">redis</b> --name awesome-webapp-v2 awesome-webapp
     </code>
   </pre>
 
@@ -25,7 +25,7 @@
       <b>$></b> docker run -d --name <b class="red-text">redis</b> redis
       <br>
       <i># Run awesome-webapp in the foreground, and remove on exit</i>
-      <b>$></b> docker run -it --rm -e REDIS_HOST=<b class="teal-text text-darken-3">redis</b> --link <b class="red-text">redis</b>:<b class="teal-text text-darken-3">redis</b> --name awesome-webapp-v2 awesome-webapp
+      <b>$></b> docker run -it --rm -e REDIS_PORT=6379 -e REDIS_HOST=<b class="teal-text text-darken-3">redis</b> -P --link <b class="red-text">redis</b>:<b class="teal-text text-darken-3">redis</b> --name awesome-webapp-v2 awesome-webapp
     </code>
   </pre>
 </div>
